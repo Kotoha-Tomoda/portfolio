@@ -92,6 +92,12 @@ nav.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 100%; /* 既存の container の最大幅をキャンセル */
+
+    /* 3. 画面の端ギリギリにくっつかないよう、左右に少しだけ余白を持たせる */
+    padding: 0 30px; /* スマホ用に別途メディアクエリで小さくするとなお良しです */
+    box-sizing: border-box; /* paddingを含めて幅100%にする（横スクロールバー発生を防ぐ） */
 }
 
 .logo a {
@@ -309,6 +315,7 @@ nav.container {
     animation: bounce 2.5s infinite;
     opacity: 0.5;
     color: var(--text-muted);
+    margin: 0 auto; 
 }
 
 .scroll-down span {
@@ -486,7 +493,7 @@ nav.container {
 }
 
 /* 手帳のチェックマーク風装飾 */
-.skill-card::after {
+/*.skill-card::after {
     content: '✓';
     position: absolute;
     top: 12px;
@@ -495,7 +502,7 @@ nav.container {
     font-size: 1.2rem;
     color: var(--pink);
     opacity: 0.6;
-}
+} */
 
 .skill-card i {
     font-size: 36px;
@@ -601,7 +608,7 @@ nav.container {
 }
 
 /* 手帳ページの角を折った風装飾 */
-.work-image::after {
+/*.work-image::after {
     content: '';
     position: absolute;
     top: 0;
@@ -611,7 +618,7 @@ nav.container {
     border-style: solid;
     border-width: 0 30px 30px 0;
     border-color: transparent var(--cream) transparent transparent;
-}
+}*/
 
 .work-image span {
     font-family: var(--font-accent);
